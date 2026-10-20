@@ -1,0 +1,471 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Mayank | My Digital World</title>
+  <meta name="description" content="Welcome to my digital world. Explore my ideas, projects and creativity.">
+  <meta name="theme-color" content="#080b12">
+
+  <style>
+    /* ===== BASIC RESET ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #080b12;
+      color: #f5f7ff;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button, a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    /* ===== NAVIGATION ===== */
+    .navbar {
+      width: 100%;
+      min-height: 76px;
+      padding: 16px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(8, 11, 18, 0.92);
+      border-bottom: 1px solid #252b38;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: 800;
+      letter-spacing: -1px;
+    }
+
+    .logo span {
+      color: #70a5ff;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 14px;
+      color: #c5ccdc;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #70a5ff;
+    }
+
+    /* ===== HERO SECTION ===== */
+    .hero {
+      min-height: 85vh;
+      padding: 100px 7%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      background:
+        radial-gradient(
+          ellipse at 80% 35%,
+          rgba(64, 104, 210, 0.19),
+          transparent 55%
+        );
+    }
+
+    .eyebrow {
+      color: #86adff;
+      font-size: 12px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 {
+      max-width: 850px;
+      font-size: clamp(44px, 8vw, 90px);
+      line-height: 1.08;
+      letter-spacing: -4px;
+    }
+
+    .hero h1 span {
+      color: #80aaff;
+    }
+
+    .hero p {
+      max-width: 570px;
+      color: #a9b2c5;
+      margin: 26px 0 32px;
+      font-size: 17px;
+    }
+
+    .button {
+      display: inline-block;
+      background: #78a4ff;
+      color: #080b12;
+      padding: 13px 25px;
+      border-radius: 30px;
+      font-size: 14px;
+      font-weight: 700;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .button:hover {
+      background: #a1beff;
+      transform: translateY(-2px);
+    }
+
+    .button-outline {
+      background: transparent;
+      border: 1px solid #46516a;
+      color: #f5f7ff;
+      margin-left: 10px;
+    }
+
+    .button-outline:hover {
+      background: #1b2333;
+      color: white;
+    }
+
+    /* ===== GENERAL SECTIONS ===== */
+    .section {
+      padding: 85px 7%;
+    }
+
+    .section-label {
+      color: #80aaff;
+      font-size: 12px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .section h2 {
+      font-size: clamp(30px, 5vw, 48px);
+      line-height: 1.2;
+      letter-spacing: -1.5px;
+      margin-bottom: 18px;
+    }
+
+    .section-description {
+      max-width: 600px;
+      color: #a9b2c5;
+      margin-bottom: 38px;
+    }
+
+    /* ===== ABOUT ===== */
+    .about {
+      background: #0e131e;
+      border-top: 1px solid #202838;
+      border-bottom: 1px solid #202838;
+    }
+
+    .about-text {
+      max-width: 750px;
+      color: #b6bfd0;
+      font-size: 16px;
+    }
+
+    /* ===== PROJECT CARDS ===== */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: #101725;
+      border: 1px solid #263146;
+      padding: 28px;
+      border-radius: 18px;
+      transition: transform 0.25s, border-color 0.25s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: #6f9eff;
+    }
+
+    .card-icon {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      background: #1c2b48;
+      border-radius: 14px;
+      font-size: 24px;
+      margin-bottom: 23px;
+    }
+
+    .card h3 {
+      font-size: 21px;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #a9b2c5;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .card a {
+      color: #8bb0ff;
+      font-size: 14px;
+    }
+
+    /* ===== CONTACT ===== */
+    .contact {
+      background:
+        radial-gradient(
+          ellipse at 50% 100%,
+          rgba(64, 104, 210, 0.15),
+          transparent 65%
+        );
+      text-align: center;
+    }
+
+    .contact .section-description {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      border-top: 1px solid #252b38;
+      padding: 25px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      color: #8993a8;
+      font-size: 13px;
+    }
+
+    /* ===== RESPONSIVE DESIGN ===== */
+    @media (max-width: 800px) {
+      .projects-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .navbar {
+        padding-left: 5%;
+        padding-right: 5%;
+      }
+
+      .nav-links {
+        gap: 15px;
+      }
+
+      .hero h1 {
+        letter-spacing: -2px;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .navbar {
+        min-height: 65px;
+        gap: 12px;
+      }
+
+      .logo {
+        font-size: 21px;
+      }
+
+      .nav-links {
+        gap: 12px;
+      }
+
+      .nav-links a {
+        font-size: 12px;
+      }
+
+      .hero {
+        min-height: 78vh;
+        padding: 80px 6%;
+      }
+
+      .hero h1 {
+        font-size: clamp(42px, 11vw, 58px);
+        letter-spacing: -2px;
+      }
+
+      .hero p {
+        font-size: 15px;
+      }
+
+      .button {
+        padding: 12px 19px;
+      }
+
+      .button-outline {
+        margin-left: 5px;
+      }
+
+      .section {
+        padding: 65px 6%;
+      }
+
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .card {
+        padding: 24px;
+      }
+
+      footer {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <header class="navbar">
+    <a href="#home" class="logo">M<span>.</span></a>
+
+    <nav aria-label="Main navigation">
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <main>
+    <section class="hero" id="home">
+      <div class="eyebrow">Welcome to my digital world</div>
+
+      <h1>
+        Think bigger.<br>
+        Build <span>better.</span>
+      </h1>
+
+      <p>
+        A space for ideas, creativity and technology.
+        Explore what I am building and discover what is possible.
+      </p>
+
+      <div>
+        <a href="#projects" class="button">Explore projects ↗</a>
+        <a href="#about" class="button button-outline">About me</a>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section about" id="about">
+      <div class="section-label">A little introduction</div>
+
+      <h2>Curiosity creates possibilities.</h2>
+
+      <p class="about-text">
+        I enjoy exploring technology, learning new things and
+        turning ideas into projects. This website is my little
+        corner of the internet, built with HTML and CSS.
+        Every great project begins with a simple idea.
+      </p>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section" id="projects">
+      <div class="section-label">What I do</div>
+
+      <h2>Ideas in progress.</h2>
+
+      <p class="section-description">
+        A few areas where creativity meets technology.
+        Replace these sample cards with your actual projects.
+      </p>
+
+      <div class="projects-grid">
+
+        <article class="card">
+          <div class="card-icon">💻</div>
+          <h3>Technology</h3>
+          <p>
+            Exploring computers, websites and the technology
+            that powers our digital world.
+          </p>
+          <a href="#contact">Learn more ↗</a>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">🧠</div>
+          <h3>Creative Ideas</h3>
+          <p>
+            Thinking differently, solving problems and
+            developing ideas into useful projects.
+          </p>
+          <a href="#contact">Learn more ↗</a>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">🚀</div>
+          <h3>My Projects</h3>
+          <p>
+            A growing collection of experiments,
+            personal projects and things I create.
+          </p>
+          <a href="#contact">Learn more ↗</a>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section contact" id="contact">
+      <div class="section-label">Let's connect</div>
+
+      <h2>Every idea starts somewhere.</h2>
+
+      <p class="section-description">
+        Have an interesting idea or project?
+        Let's make something useful.
+      </p>
+
+      <a class="button"
+         href="mailto:your-email@example.com">
+        Contact me ↗
+      </a>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Mayank. All rights reserved.</p>
+    <a href="#home">Back to top ↑</a>
+  </footer>
+
+</body>
+</html>
